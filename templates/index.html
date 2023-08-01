@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <title>Bulk WhatsApp Sender</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Bulk WhatsApp Sender</h1>
+        <form method="POST" enctype="multipart/form-data" action="/send">
+            {{ form.csrf_token }}
+            <div class="mb-3">
+                {{ form.csv_file.label }} {{ form.csv_file() }}
+            </div>
+            <div class="mb-3">
+                {{ form.message.label }} {{ form.message() }}
+            </div>
+            <div class="mb-3">
+                {{ form.image.label }} {{ form.image() }}
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
